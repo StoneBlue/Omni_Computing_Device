@@ -1,0 +1,60 @@
+PART
+{
+	name = OCD.chip.B9_info
+	module = Part
+	author = Colin Votier, Stone Blue
+	
+	MODEL
+	{
+		model = OCD/Assets/Chip/OCD_Chip
+	}
+	rescaleFactor = 1.0
+	
+	node_stack_top = 0.3125, 0.0, 0.0, -1.0, 0.0, 0.0, 0
+	attachRules = 1,0,0,0,1
+	
+	title = OCD Circuit Board B9 Information
+	manufacturer = OCD Industries
+	description = This chip allows use of the "i" key to toggle a list of data about your craft. Select this part or use the "i" key while on the Action Groups tab to edit that information.
+
+	TechRequired = automation
+	entryCost = 2000
+	cost = 700
+	category = Utility
+	subcategory = 0
+	mass = 0.0001
+	dragModelType = default
+	maximum_drag = 0.2
+	minimum_drag = 0.2
+	angularDrag = 2
+	crashTolerance = 5
+	maxTemp = 500
+	breakingForce = 500
+	breakingTorque = 500
+	explosionPotential = 0
+	PhysicsSignificance = 1
+
+	MODULE
+	{
+		name = FSinfoPopup
+		textHeading = Craft Information
+		textBody1 = 1 - 
+		textBody2 = 2 - 
+		textBody3 = 3 - 
+		textBody4 = 4 - 
+		textBody5 = 5 - 
+		textBody6 = 6 - 
+		textBody7 = 7 - 
+		textBody8 = 8 - 
+		textBody9 = 9 - 
+		textBody10 = 0 - 
+		textBody11 = Press [ i ] to toggle this window.
+		showAtFlightStart = true
+		hideAfterCountdown = true
+		showOnEachFlightStart = true
+		countDownDuration = 30f
+//		countDownDuration = 30
+		toggleKey = i
+	}
+
+}

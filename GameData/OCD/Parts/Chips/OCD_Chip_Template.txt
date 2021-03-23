@@ -1,0 +1,52 @@
+//	Example chip part config file for MCP.
+//	The contents below "PART { " can be copy/pasted to a new file, modified, and then saved with file extension .cfg. All comments/text on a line following double forward slashes (//), can be removed with the slashes, in the newly created .cfg file. Please put the new chip part file 
+
+
+
+
+PART
+{
+	name = MCP.chip.<chip_name>  					//<-- Replace <chip_name> with <modprefix_parttitle> (remove the <>). See existing cfgs for examples
+	module = Part
+	author = Colin Votier, micha030201, Stone Blue  //<-- Add your username here, if you want credit
+
+	MODULE
+	{
+		model = MCP/Assets/Chips/Chip  				//<-- Folder URL to lacation of chip model
+	}
+	rescaleFactor = 1.0								//<-- The chip is modelled to a specific scale, and to be the correct size ingame, this needs to stay "= 1.0". KSP defaults to "= 1.25"
+
+	node_stack_top = 0.3125, 0.0, 0.0, 1.0, 0.0, 0.0, 0  //<-- This is the position of the attachment point of the chip, and should not change
+	attachRules = 1,0,0,0,0							//<-- This sets the attachment node to "stack" only. No surface attach at all
+
+	title = MCP Circuit Board- <modprefix parttitle>  //<-- Replace <modprefix parttitle> w/a short mod prefix and what the part is (remove the <>)
+	manufacturer = Chroma Works						//<-- For consistency, please keep this the same
+	description = The basic model for advanced computer processing.  //<-- Replace this with whatever description you like
+
+	TechRequired = automation						//<-- Placement in the TechTree. Change to whatever tree node you like
+	entryCost = 2000								//<-- Cost to initially "buy" the part, after the TechTree node is available. Change to what you like
+	cost = 800										//<-- Cost to purchase each instance of a part to place on your craft. Change to what you like
+	category = Control								//<-- The category the chip shows under in the editor parts list. Please keep it consistent with the prupose of the chip. If unsure, just leave it "Control", where the Core parts are located
+	subcategory = 0
+
+	mass = 0.002 // <-- can be changed, but I suggest not. Stock minimum to work with inventories is 0.002 (4.4lbs) so they are already pretty heavy.
+	dragModelType = default
+	maximum_drag = 0.2
+	minimum_drag = 0.2
+	angularDrag = 2
+	crashTolerance = 5
+	maxTemp = 500
+	breakingForce = 10
+	breakingTorque = 10
+	explosionPotential = 0
+
+	MODULE											//<-- This is the stock MODULE that allows parts to be held in inventories
+	{												//<-- If you want to add MODULES for from mods (anything other than Stock),
+													//	  please add them to a seperate "module manager patch file". NOT in the "chip part file"
+													//	  Use the MM_Template.cfg in the Patches folder to write a new patch file from
+		name = ModuleCargoPart	
+		stackableQuantity = 4
+		packedVolume = 5
+	}
+
+}

@@ -1,0 +1,17 @@
+// KAS Patch
+@PART[MCP_*]:NEEDS[KAS]
+{
+
+	MODULE
+	{
+		name = KASModuleGrab
+		evaPartPos = (0.0, 0.0, -0.15)
+		evaPartDir = (0,0,-1)
+		storable = True
+		storedSize = 2
+		attachOnPart = True
+		attachOnEva = False
+		attachOnStatic = False
+	}
+	
+}

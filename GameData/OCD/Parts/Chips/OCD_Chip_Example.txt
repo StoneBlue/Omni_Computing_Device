@@ -1,0 +1,76 @@
+// Omni Computing Device, Example Chip Part Config File, by Stone Blue
+// <-- These dbl-frwd slashes are comment markers. 
+// Anything following them is "commented out", and KSP will not register following text, for THAT line.
+// They may be added anywhere in the file. To un-comment text, just remove the slashes. 
+// All comments may also be deleted from the file, without affecting function
+
+
+PART // *DO NOT CHANGE* <-- "PART" designates/applies the following sections, between the PART node's brackets, as a "part" in game 
+{
+	name = OCD.chip.example // <-- replace 'example' with whatever you want to call your card (this is an internal name for the part; users DO NOT see this)
+	module = Part
+	author = Colin Votier, Stone Blue // <-- feel free to add your name
+
+	MODEL
+	{
+		model = OCD/Assets/Chip/OCD_Chip // *DO NOT CHANGE* <-- folder path where the Chip.mu is located
+	}
+	rescaleFactor = 1.0  // *DO NOT CHANGE* <-- rescales the part. Defaults to 1.25, if not specifically defined (inc. the model AND the attachment nodes)
+
+	attachRules = 1,0,0,0,1  // <-- *DO NOT CHANGE* defines how a part attaches to other parts. stack, surface attach, allow stack, allow surface, allow collision
+	node_stack_top = 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0  // <-- *DO NOT CHANGE*  defines the location of the attach nodes; location x,y,z, orientation x,y,z, and node size (the green circle that shows in game) 
+
+	title = OCD Circuit Board Accelerometer  // <-- feel free to come up with your own part name (this is the name of the part that shows up in-game)
+	manufacturer = OCD Industries  // <-- feel free to come up with your own manufacturer name
+	description = Using the basic hardware in the computer core, this chip will allow measurements of the acceleration of your craft and all that movement-based sciency stuff.
+	
+	TechRequired = electronics  // <-- change this to the catagory where you want the part to appear in the TechTree
+	entryCost = 8200  // <-- change to whatever you want
+	cost = 6000  // <-- change to whatever you want
+	category = Science  // <-- change this to the category you want the part to be under in the VAB/SPH part menu
+	subcategory = 0 // <-- ???? vOv
+	mass = 0.002 // <-- can be changed, but I suggest not. Stock minimum to work with inventories is 0.002 (4.4lbs) so they are already pretty heavy.
+	dragModelType = default
+	maximum_drag = 0.2
+	minimum_drag = 0.2
+	angularDrag = 2
+	crashTolerance = 5
+	maxTemp = 500
+	breakingForce = 500  //<--- fix these, too high
+	breakingTorque = 500
+	explosionPotential = 0
+	PhysicsSignificance = 1
+
+	// ----- BELOW THIS LINE -----
+	//Add MODULES, RESOURCE, or other nodes from stock or whatever mod you are adding the card for. This is where it my get a little tricky
+
+	// the two MODULES below are just for use as exampples. This is copy/pasta'd from the stock Accelerometer part
+	// You would delete everything below, and start fresh...
+	//*EXCEPT* for that right bracket on the very bottom line... that's EXTREMELY important to leave there ;)
+	
+	MODULE
+	{
+		name = ModuleEnviroSensor
+		sensorType = ACC
+	}
+	
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		experimentID = seismicScan
+		experimentActionName = #autoLOC_502063 //#autoLOC_502063 = Log Seismic Data
+		resetActionName = #autoLOC_502064 //#autoLOC_502064 = Delete Data
+		useStaging = False
+		useActionGroups = True
+		hideUIwhenUnavailable = False
+		xmitDataScalar = 0.45
+		dataIsCollectable = True
+		collectActionName = #autoLOC_238018 //#autoLOC_238018 = Take Data
+		interactionRange = 1.5
+		rerunnable = True
+		
+	}
+
+}  // <-- *** EXTREMELY IMPORTANT *** to leave this bracket there, at the very end of your finished .cfg file.
+   //	      If this is not present, to match the one way up top, right under the "PART" declaration, 
+   //         KSP wont build your created part, and it wont show in-game

@@ -1,0 +1,128 @@
+@PART[OCD.chip.sensor]:NEEDS[B9PartSwitch]:AFTER[OCD]
+{
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		moduleID = Sensors
+		switcherDescription = Sensor Type
+		switcherDescriptionPlural = list of sensor boards
+		uiGroupName = test
+		uiGroupDisplayName = Test
+		switchInFlight = true
+
+		SUBTYPE
+		{
+			name = Accelerometer
+			title = OCD Accelerometer
+//			primaryColor = 
+//			secondaryColor =
+			descriptionSummary = test descrip
+			descriptionDetail = Test Descrip Detail
+			defaultSubtypePriority = 1
+			addedCost = 0
+			allowSwitchInFlight = true
+//			upgradeRequired = 
+
+			TechRequired = electronics
+			entryCost = 2000
+			cost = 800
+
+			MODULE
+			{
+				IDENTIFIER
+                {
+					name = ModuleEnviroSensor
+					sensorType = ACC
+				}
+//                DATA
+//                {
+//					sensorType = ACC
+//				}
+			}
+	
+			MODULE
+			{
+				IDENTIFIER
+                {
+					name = ModuleScienceExperiment
+				}
+                DATA
+                {
+					experimentID = seismicScan
+					experimentActionName = #autoLOC_502063	//#autoLOC_502063 = Log Seismic Data
+					resetActionName = #autoLOC_502064		//#autoLOC_502064 = Delete Data
+					useStaging = False
+					useActionGroups = True
+					hideUIwhenUnavailable = False
+					xmitDataScalar = 0.45
+					dataIsCollectable = True
+					collectActionName = #autoLOC_238018		//#autoLOC_238018 = Take Data
+					interactionRange = 1.5
+					rerunnable = True
+					usageReqMaskInternal = 1
+					usageReqMaskExternal = 8
+				}
+			}
+		}
+		
+		SUBTYPE
+		{
+			name = Barometer
+			title = OCD Barometer
+//			primaryColor = 
+//			secondaryColor =
+			descriptionSummary = test descrip
+			descriptionDetail = Test Descrip Detail
+			defaultSubtypePriority = 0
+			addedCost = 0
+			allowSwitchInFlight = true
+//			upgradeRequired = 
+
+			TechRequired = engineering101 //spaceExploration
+			entryCost = 2000
+			cost = 800
+			
+			MODULE
+			{
+				IDENTIFIER
+                {
+					name = ModuleEnviroSensor
+					sensorType = PRES
+				}
+//                DATA
+//                {
+//					sensorType = PRES
+//				}
+			}
+	
+			MODULE
+			{
+				IDENTIFIER
+                {
+					name = ModuleScienceExperiment
+				}
+                DATA
+                {
+					experimentID = barometerScan
+					experimentActionName = #autoLOC_502065 //#autoLOC_502065 = Log Pressure Data
+					resetActionName = #autoLOC_502064		//#autoLOC_502064 = Delete Data
+					useStaging = False
+					useActionGroups = True
+					hideUIwhenUnavailable = False
+					xmitDataScalar = 0.45
+					dataIsCollectable = True
+					collectActionName = #autoLOC_238018		//#autoLOC_238018 = Take Data
+					interactionRange = 1.5
+					rerunnable = True
+					usageReqMaskInternal = 1
+					usageReqMaskExternal = 8
+				}
+			}
+			
+		}
+
+
+		
+	}
+
+}

@@ -1,0 +1,46 @@
+//Kray Computer Package Chip Firespitter & Interstellar Fuel Switch Texture Switcher Patch, by Stone Blue
+
+@PART[KAL.chip.*]:NEEDS[Firespitter|InterstellarFuelSwitch]:FOR[KrayComputer]
+{
+	
+	MODULE
+	{
+		name:NEEDS[!InterstellarFuelSwitch] = FStextureSwitch2
+		name:NEEDS[InterstellarFuelSwitch] = InterstellarTextureSwitch2
+		moduleID = 42
+		objectNames = board
+		textureRootFolder:NEEDS[!InterstellarFuelSwitch] = KrayComputer/Assets/Chip/
+		textureNames:NEEDS[!InterstellarFuelSwitch] = chip_blue;chip_green;chip_grey;chip_red
+		textureNames:NEEDS[InterstellarFuelSwitch] = KrayComputer/Assets/Chip/chip_blue;KrayComputer/Assets/Chip/chip_green;KrayComputer/Assets/Chip/chip_grey;KrayComputer/Assets/Chip/chip_red
+		textureDisplayNames = Blue;Green;Grey;Red
+		nextButtonText:NEEDS[!InterstellarFuelSwitch] = Next Color
+		statusText:NEEDS[!InterstellarFuelSwitch] = Board Color
+		switchableInFlight = true
+		repaintableEVA = true
+		showPreviousButton:NEEDS[!InterstellarFuelSwitch] = false
+		switcherDescription = Board Color
+		selectedTexture:NEEDS[InterstellarFuelSwitch] = 0
+		hasSwitchChooseOption:NEEDS[InterstellarFuelSwitch] = true
+	}
+	
+	MODULE
+	{
+		name:NEEDS[!InterstellarFuelSwitch] = FStextureSwitch2
+		name:NEEDS[InterstellarFuelSwitch] = InterstellarTextureSwitch2
+		moduleID = 43
+		objectNames = shield
+		textureRootFolder:NEEDS[!InterstellarFuelSwitch] = KrayComputer/Assets/Chip/
+		textureNames:NEEDS[!InterstellarFuelSwitch] = shield_data;shield_empty;shield_science;shield_sensor;shield_control;shield_info
+		textureNames:NEEDS[InterstellarFuelSwitch] = KrayComputer/Assets/Chip/shield_data;KrayComputer/Assets/Chip/shield_empty;KrayComputer/Assets/Chip/shield_science;KrayComputer/Assets/Chip/shield_sensor;KrayComputer/Assets/Chip/shield_control;KrayComputer/Assets/Chip/shield_info
+		textureDisplayNames = Data;Blank;Science;Sensor;Control;Info
+		nextButtonText:NEEDS[!InterstellarFuelSwitch] = Next Shield
+		statusText:NEEDS[!InterstellarFuelSwitch] = Shield Text
+		switchableInFlight = true
+		repaintableEVA = true
+		showPreviousButton:NEEDS[!InterstellarFuelSwitch] = false
+		switcherDescription = Shield Text
+		selectedTexture:NEEDS[InterstellarFuelSwitch] = 0
+		hasSwitchChooseOption:NEEDS[InterstellarFuelSwitch] = true
+	}
+	
+}

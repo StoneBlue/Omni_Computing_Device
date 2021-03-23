@@ -1,0 +1,6 @@
+//  Remove Stock SAS from All Command Parts Patch
+@PART[*]:HAS[@MODULE[ModuleCommand],@MODULE[ModuleSAS]]:LAST[OCD]
+{
+	!MODULE[ModuleSAS] {}
+	
+}

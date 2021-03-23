@@ -1,0 +1,43 @@
+PART
+{
+	name = KAL.chip.Protractor
+	module = Part
+	author = Colin Votier/Stone Blue/Enigma
+
+	MODEL
+	{
+		model = KrayComputer/Assets/Chip/Chip
+	
+	}
+	rescaleFactor = 1.0
+	
+	attachRules = 1,0,0,0,1
+	node_stack_top = 0.3125, 0.0, 0.0, -1.0, 0.0, 0.0, 0
+	
+	title = Kray Protractor Circuit Board
+	manufacturer = Kray Industries
+	description = Tired of holding a protractor up to your screen? Use this instead!
+
+	TechRequired = flightControl
+	entryCost = 4400
+	cost = 700
+	category = Utility
+	subcategory = 0
+	mass = 0.0001
+	dragModelType = default
+	maximum_drag = 0.2
+	minimum_drag = 0.2
+	angularDrag = 2
+	crashTolerance = 5
+	maxTemp = 500
+	breakingForce = 500
+	breakingTorque = 500
+	explosionPotential = 0
+	PhysicsSignificance = 1
+
+	MODULE
+	{
+		name = ProtractorModule
+	}
+
+}
