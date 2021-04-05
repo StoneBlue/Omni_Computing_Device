@@ -1,0 +1,16 @@
+when switching vessels using the arrow in the GUI, camera does not reset to vessel camera... eeps space center camera?
+parse coord values to 5 or 6 digits after decimal?... to 1m accuracy? at least in the GUI display?
+
+widen GUI window, so coord boxes show full parsed value?
+
+when three or moar vessels, first one gets deactivated (stops moving)
+
+north one: 0.0484, -74.4831 (pos 0.0139, 74.6989, hdg: 359)
+west one: -0.2161, -75.0037
+Set target: boxes coords switch to target coords of last controller activated, top Target lat/Target long: remain normal
+craft seems to not move, after revisiting it, then leaving to Space Center scene?
+
+craft seems rotated 90° to heading when you switch to it? even with disable rotation set in settings
+do braes automatically engage when switching to active bonvoyage vessel?
+
+

@@ -1,0 +1,19 @@
+@PART[OCD]:NEEDS[RemoteTech]
+{
+	MODULE
+	{
+		name = ModuleRTAntennaPassive
+		OmniRange = 10000
+		TRANSMITTER 
+		{
+			PacketInterval = 0.3
+			PacketSize = 2
+		}
+	}
+	MODULE
+	{
+		name = ModuleSPUPassive
+	}
+}
+
+	
